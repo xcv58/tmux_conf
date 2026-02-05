@@ -1,2 +1,6 @@
-all:
-	@sh link.sh
+all: install
+
+install:
+	@zsh install.zsh
+
+.PHONY: all install

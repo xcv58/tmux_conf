@@ -37,7 +37,7 @@ All commands below should be preceded by the prefix unless noted with `-n` (no p
 
 | Keybinding | Description |
 |------------|-------------|
-| `Ctrl-t` | Next window (no prefix needed) |
+| `Ctrl-b` | Next window (no prefix needed) |
 | `PREFIX c` | Create new window |
 | `PREFIX &` | Kill current window |
 | `PREFIX ,` | Rename current window |

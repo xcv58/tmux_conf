@@ -170,7 +170,7 @@ For macOS-specific changes, edit `~/.MacOStmux.conf`.
 | Key | Action |
 |-----|--------|
 | `Ctrl-q` | Prefix key (hold for all PREFIX commands) |
-| `Ctrl-b` | Next window |
+| `Ctrl-t` | Next window |
 | `Ctrl-f` | Next pane |
 | `Ctrl-z` | Zoom/unzoom current pane |
 

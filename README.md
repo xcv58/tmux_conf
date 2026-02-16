@@ -87,10 +87,7 @@ All commands below should be preceded by the prefix unless noted with `-n` (no p
 
 ### Mouse Support
 
-| Keybinding | Description |
-|------------|-------------|
-| `PREFIX m` | Enable mouse mode |
-| `PREFIX M` | Disable mouse mode |
+Mouse support is enabled by default. Scroll up to enter copy mode.
 
 ### Configuration
 
@@ -173,6 +170,7 @@ For macOS-specific changes, edit `~/.MacOStmux.conf`.
 | `Ctrl-t` | Next window |
 | `Ctrl-f` | Next pane |
 | `Ctrl-z` | Zoom/unzoom current pane |
+| `Ctrl-u` | Enter copy mode (scroll up) |
 
 ### Essential Commands (PREFIX + key)
 
@@ -225,12 +223,9 @@ For macOS-specific changes, edit `~/.MacOStmux.conf`.
 | `n` | Next match |
 | `N` | Previous match |
 
-### Mouse (PREFIX + key)
+### Mouse Support
 
-| Key | Action |
-|-----|--------|
-| `m` | Mouse ON |
-| `M` | Mouse OFF |
+Mouse is enabled by default.
 
 ### Session Manager
 

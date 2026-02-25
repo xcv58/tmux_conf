@@ -18,6 +18,10 @@ for config_file in ${PWD}/*.conf; do
     eval ${link_command}
 done
 
+link_command="${lnCommand} ${PWD}/tmux-pst.sh ${HOME}/.tmux-pst.sh"
+echo ${link_command}
+eval ${link_command}
+
 link_command="ln -sf ${PWD}/tmux.start.sh /usr/local/bin/t"
 echo ${link_command}
 eval ${link_command}

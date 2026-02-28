@@ -5,12 +5,24 @@ export PATH=$PATH:/usr/local/bin
 [ "$TMUX" == "" ] || exit 0
 
 create() {
-  tmux new -s "$1" -d
+  tmux new-session -s "$1" -d
+
+  create_2x2_current_window
+
+  tmux new-window -t "$1:2"
+  create_2x2_current_window
+
+  tmux select-window -t "$1:1"
+  tmux select-pane -t top-left
+}
+
+create_2x2_current_window() {
+  tmux split-window -h
+  tmux select-pane -L
   tmux split-window -v
-  tmux neww
+  tmux select-pane -R
   tmux split-window -v
-  tmux select-window -t 1
-  tmux select-pane -t 1
+  tmux select-layout tiled >/dev/null
 }
 
 connect() {

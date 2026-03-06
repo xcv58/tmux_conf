@@ -23,4 +23,9 @@ esac
 if [ "$ud" -eq "$pd" ]; then u_s=""; elif [ "$ud" -gt "$pd" ]; then u_s="+1"; else u_s="-1"; fi
 if [ "$ld" -eq "$pd" ]; then l_s=""; elif [ "$ld" -gt "$pd" ]; then l_s="+1"; else l_s="-1"; fi
 
-echo "#[fg=white,dim]$pd_day $pd_fmt #[fg=cyan,dim]L${lt}${l_s} #[fg=yellow]P${pt} #[fg=magenta,dim]Z${ut}${u_s}#[default]"
+local_part=""
+if { [ "$lt" != "$pt" ] || [ "$ld" != "$pd" ]; } && { [ "$lt" != "$ut" ] || [ "$ld" != "$ud" ]; }; then
+  local_part="#[fg=cyan,dim]L${lt}${l_s} "
+fi
+
+echo "#[fg=white,dim]$pd_day $pd_fmt ${local_part}#[fg=yellow]P${pt} #[fg=magenta,dim]Z${ut}${u_s}#[default]"

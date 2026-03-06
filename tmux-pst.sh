@@ -1,12 +1,13 @@
 #!/bin/sh
-pd=$(TZ=America/Los_Angeles date +%Y%m%d)
-pd_fmt=$(TZ=America/Los_Angeles date +%m/%d)
-pd_day_raw=$(TZ=America/Los_Angeles date +%a)
-pt=$(TZ=America/Los_Angeles date +%H:%M)
-ud=$(date -u +%Y%m%d)
-ut=$(date -u +%H:%M)
-ld=$(date +%Y%m%d)
-lt=$(date +%H:%M)
+now=$(date +%s)
+pd=$(TZ=America/Los_Angeles date -r "$now" +%Y%m%d)
+pd_fmt=$(TZ=America/Los_Angeles date -r "$now" +%m/%d)
+pd_day_raw=$(TZ=America/Los_Angeles date -r "$now" +%a)
+pt=$(TZ=America/Los_Angeles date -r "$now" +%H:%M)
+ud=$(date -u -r "$now" +%Y%m%d)
+ut=$(date -u -r "$now" +%H:%M)
+ld=$(date -r "$now" +%Y%m%d)
+lt=$(date -r "$now" +%H:%M)
 
 case "$pd_day_raw" in
   Mon) pd_day="Mo" ;;
@@ -24,7 +25,7 @@ if [ "$ud" -eq "$pd" ]; then u_s=""; elif [ "$ud" -gt "$pd" ]; then u_s="+1"; el
 if [ "$ld" -eq "$pd" ]; then l_s=""; elif [ "$ld" -gt "$pd" ]; then l_s="+1"; else l_s="-1"; fi
 
 local_part=""
-if { [ "$lt" != "$pt" ] || [ "$ld" != "$pd" ]; } && { [ "$lt" != "$ut" ] || [ "$ld" != "$ud" ]; }; then
+if [ "$lt" != "$pt" ] && [ "$lt" != "$ut" ]; then
   local_part="#[fg=cyan,dim]L${lt}${l_s} "
 fi
 

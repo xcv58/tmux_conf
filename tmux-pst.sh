@@ -1,13 +1,21 @@
 #!/bin/sh
 now=$(date +%s)
-pd=$(TZ=America/Los_Angeles date -r "$now" +%Y%m%d)
-pd_fmt=$(TZ=America/Los_Angeles date -r "$now" +%m/%d)
-pd_day_raw=$(TZ=America/Los_Angeles date -r "$now" +%a)
-pt=$(TZ=America/Los_Angeles date -r "$now" +%H:%M)
-ud=$(date -u -r "$now" +%Y%m%d)
-ut=$(date -u -r "$now" +%H:%M)
-ld=$(date -r "$now" +%Y%m%d)
-lt=$(date -r "$now" +%H:%M)
+
+# macOS uses "date -r EPOCH", Linux (GNU) uses "date -d @EPOCH"
+if date -d @0 >/dev/null 2>&1; then
+  dflag="-d @$now"
+else
+  dflag="-r $now"
+fi
+
+pd=$(TZ=America/Los_Angeles date $dflag +%Y%m%d)
+pd_fmt=$(TZ=America/Los_Angeles date $dflag +%m/%d)
+pd_day_raw=$(TZ=America/Los_Angeles date $dflag +%a)
+pt=$(TZ=America/Los_Angeles date $dflag +%H:%M)
+ud=$(date -u $dflag +%Y%m%d)
+ut=$(date -u $dflag +%H:%M)
+ld=$(date $dflag +%Y%m%d)
+lt=$(date $dflag +%H:%M)
 
 case "$pd_day_raw" in
   Mon) pd_day="Mo" ;;

@@ -25,3 +25,8 @@ eval ${link_command}
 link_command="ln -sf ${PWD}/tmux.start.sh /usr/local/bin/t"
 echo ${link_command}
 eval ${link_command}
+
+mkdir -p ${HOME}/.config/zellij
+link_command="${lnCommand} ${PWD}/zellij/config.kdl ${HOME}/.config/zellij/config.kdl"
+echo ${link_command}
+eval ${link_command}

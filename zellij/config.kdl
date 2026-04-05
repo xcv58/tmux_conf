@@ -12,10 +12,11 @@ keybinds clear-defaults=true {
         bind "Alt 3" { GoToTab 3; }
         bind "Alt 4" { GoToTab 4; }
         // Directional pane nav (WASD)
-        bind "Alt w" { MoveFocus "up"; }
+        bind "Alt w" { FocusPreviousPane; }
         bind "Alt a" { MoveFocusOrTab "left"; }
-        bind "Alt s" { MoveFocus "down"; }
+        bind "Alt s" { FocusNextPane; }
         bind "Alt d" { MoveFocusOrTab "right"; }
+        bind "Alt f" { ToggleFloatingPanes; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -170,9 +171,9 @@ keybinds clear-defaults=true {
         bind "Alt 2" { GoToTab 2; }
         bind "Alt 3" { GoToTab 3; }
         bind "Alt 4" { GoToTab 4; }
-        bind "Alt w" { MoveFocus "up"; }
+        bind "Alt w" { FocusPreviousPane; }
         bind "Alt a" { MoveFocusOrTab "left"; }
-        bind "Alt s" { MoveFocus "down"; }
+        bind "Alt s" { FocusNextPane; }
         bind "Alt d" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }

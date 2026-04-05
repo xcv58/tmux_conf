@@ -16,6 +16,7 @@ keybinds clear-defaults=true {
         bind "Alt a" { MoveFocusOrTab "left"; }
         bind "Alt s" { FocusNextPane; }
         bind "Alt d" { MoveFocusOrTab "right"; }
+        bind "Alt f" { ToggleFloatingPanes; }
     }
     pane {
         bind "left" { MoveFocus "left"; }

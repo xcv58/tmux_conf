@@ -13,9 +13,9 @@ keybinds clear-defaults=true {
         bind "Alt 4" { GoToTab 4; }
         // Directional pane nav (WASD)
         bind "Alt w" { MoveFocus "up"; }
-        bind "Alt a" { MoveFocus "left"; }
+        bind "Alt a" { MoveFocusOrTab "left"; }
         bind "Alt s" { MoveFocus "down"; }
-        bind "Alt d" { MoveFocus "right"; }
+        bind "Alt d" { MoveFocusOrTab "right"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -171,9 +171,9 @@ keybinds clear-defaults=true {
         bind "Alt 3" { GoToTab 3; }
         bind "Alt 4" { GoToTab 4; }
         bind "Alt w" { MoveFocus "up"; }
-        bind "Alt a" { MoveFocus "left"; }
+        bind "Alt a" { MoveFocusOrTab "left"; }
         bind "Alt s" { MoveFocus "down"; }
-        bind "Alt d" { MoveFocus "right"; }
+        bind "Alt d" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
@@ -186,7 +186,6 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
-        bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }

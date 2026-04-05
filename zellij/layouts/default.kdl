@@ -1,0 +1,20 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="tab-bar"
+    }
+    tab name="1" {
+        pane split_direction="vertical" {
+            pane size="50%"
+            pane size="50%"
+        }
+    }
+    tab name="2" {
+        pane split_direction="vertical" {
+            pane size="50%"
+            pane size="50%"
+        }
+    }
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+}

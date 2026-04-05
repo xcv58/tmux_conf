@@ -17,6 +17,7 @@ keybinds clear-defaults=true {
         bind "Alt s" { FocusNextPane; }
         bind "Alt d" { MoveFocusOrTab "right"; }
         bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl u" { SwitchToMode "scroll"; HalfPageScrollUp; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -166,6 +167,7 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         // Single-key shortcuts mirroring tmux M-z / M-1234 / M-wesd
+        bind "Ctrl u" { SwitchToMode "scroll"; HalfPageScrollUp; }
         bind "Alt z" { ToggleFocusFullscreen; }
         bind "Alt 1" { GoToTab 1; }
         bind "Alt 2" { GoToTab 2; }
@@ -337,7 +339,7 @@ web_client {
 // Choose the base input mode of zellij.
 // Default: normal
 // 
-default_mode "normal"
+default_mode "locked"
  
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL

@@ -29,7 +29,6 @@ keybinds clear-defaults=true {
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
         bind "h" { MoveFocus "left"; }
-        bind "i" { TogglePanePinned; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; }
         bind "k" { MoveFocus "up"; }
         bind "l" { MoveFocus "right"; }
@@ -37,7 +36,6 @@ keybinds clear-defaults=true {
         bind "p" { SwitchFocus; }
         bind "Ctrl p" { SwitchToMode "locked"; }
         bind "r" { NewPane "right"; SwitchToMode "locked"; }
-        bind "s" { NewPane "stacked"; SwitchToMode "locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
     }
@@ -187,8 +185,6 @@ keybinds clear-defaults=true {
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
-        bind "Alt p" { TogglePaneInGroup; }
-        bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }

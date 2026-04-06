@@ -31,6 +31,6 @@ link_command="${lnCommand} ${PWD}/zellij/config.kdl ${HOME}/.config/zellij/confi
 echo ${link_command}
 eval ${link_command}
 
-link_command="${lnCommand} ${PWD}/zellij/layouts ${HOME}/.config/zellij/layouts"
+link_command="ln -sfn ${PWD}/zellij/layouts ${HOME}/.config/zellij/layouts"
 echo ${link_command}
 eval ${link_command}

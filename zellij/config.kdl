@@ -109,6 +109,7 @@ keybinds clear-defaults=true {
         bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
         bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
         bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "q" { SwitchToMode "locked"; }
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
     }
     search {

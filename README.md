@@ -1,13 +1,13 @@
-# tmux Configuration
+# tmux and Zellij Configuration
 
-Customized tmux setup with vim-style pane movement, macOS clipboard integration, and a session launcher script.
+Customized tmux and Zellij setup with vim-style pane movement, macOS clipboard integration, and a `t` session launcher.
 
 ## Source of Truth
 
-`tmux.conf` is the source of truth for behavior and keybindings.
+`tmux.conf` and `zellij/config.kdl` are the sources of truth for behavior and keybindings.
 
-- If this README conflicts with `tmux.conf`, follow `tmux.conf`.
-- Keep docs in sync by updating this README whenever `tmux.conf` changes.
+- If this README conflicts with those files, follow the config files.
+- Keep docs in sync by updating this README whenever config behavior changes.
 
 ## Installation
 
@@ -20,7 +20,11 @@ zsh install.zsh
 This installs:
 - `tmux.conf` -> `~/.tmux.conf`
 - `MacOStmux.conf` -> `~/.MacOStmux.conf` (macOS only, auto-loaded)
-- `tmux.start.sh` -> `/usr/local/bin/t`
+- `zellij.start.sh` -> `/usr/local/bin/t`
+- `zellij/config.kdl` -> `~/.config/zellij/config.kdl`
+- `zellij/layouts` -> `~/.config/zellij/layouts`
+
+If `/usr/local/bin` is root-owned, installing the `t` launcher prompts for `sudo`.
 
 ## Prefix
 
@@ -76,7 +80,7 @@ Configured in `MacOStmux.conf`:
 
 ## Session Manager (`t`)
 
-`t` is installed from `tmux.start.sh`.
+`t` is installed from `zellij.start.sh` and manages Zellij sessions.
 
 Examples:
 
@@ -86,10 +90,12 @@ t work
 t 2
 ```
 
-When creating a session, it creates:
-- Window 1: 2x2 panes
-- Window 2: 2x2 panes
-- Focus returns to window 1, top-left pane
+Behavior:
+- Running `t` inside Zellij exits without nesting sessions.
+- Running `t work` attaches to `work`, creating it if needed.
+- Running `t 2` attaches to the second session in the menu list.
+- Running `t` ensures `_default` exists and opens an interactive session menu.
+- New session layout comes from Zellij's configured default layout.
 
 ## Other Behavior
 
@@ -104,7 +110,8 @@ When creating a session, it creates:
 ```text
 tmux.conf        # main config
 MacOStmux.conf   # macOS clipboard/copy-mode extras
-tmux.start.sh    # session launcher (installed as `t`)
+tmux.start.sh    # legacy tmux session launcher
+zellij.start.sh  # Zellij session launcher (installed as `t`)
 install.zsh      # installer
 Makefile         # install wrapper
 README.md        # documentation

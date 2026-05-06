@@ -1,5 +1,7 @@
 #!/bin/zsh
 #
+set -e
+
 SCRIPT_FILE=$0
 SCRIPT_PATH=$(dirname $SCRIPT_FILE)
 cd ${SCRIPT_PATH}
@@ -22,7 +24,11 @@ link_command="${lnCommand} ${PWD}/tmux-pst.sh ${HOME}/.tmux-pst.sh"
 echo ${link_command}
 eval ${link_command}
 
-link_command="ln -sf ${PWD}/tmux.start.sh /usr/local/bin/t"
+if [ -w /usr/local/bin ]; then
+    link_command="ln -sf ${PWD}/zellij.start.sh /usr/local/bin/t"
+else
+    link_command="sudo ln -sf ${PWD}/zellij.start.sh /usr/local/bin/t"
+fi
 echo ${link_command}
 eval ${link_command}
 
